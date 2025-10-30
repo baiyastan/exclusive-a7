@@ -1,10 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import "./Banner.css"
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
 import phone from "../../assets/image/phone.png"
+import { useSelector, useDispatch } from 'react-redux';
+import { getCategory } from '../../redux/thunk/thunk';
 
 function Banner() {
+    const {list, loading, error} = useSelector((state) => state.category)
+    const dispatch = useDispatch()
+
+
+
+    useEffect(() => {
+        dispatch(getCategory())
+    }, [])
+
+    console.log(list);
+    
     return (
         <div className='banner'>
             <div className='sidebar'>

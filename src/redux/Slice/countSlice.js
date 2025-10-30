@@ -9,9 +9,11 @@ const countSlice = createSlice({
         addTimer: (state) => {
             state.timer += 1;
         },
-        
+        decrement: (state) => {
+            state.timer -= 1
+        }
     }
 })
 
-export const {addTimer} = countSlice.actions;
+export const {addTimer, decrement} = countSlice.actions;
 export default countSlice.reducer;
