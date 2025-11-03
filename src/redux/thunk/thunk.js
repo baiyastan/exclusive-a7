@@ -13,3 +13,17 @@ export const getCategory = createAsyncThunk(
         }
     }
 )
+
+
+export const getProduct = createAsyncThunk(
+    "fetct/products",
+    async (_, {rejectWithValue}) => {
+        try {
+            const res = await apiClient.get("/products")
+            return res.data.products;
+        } catch (error) {
+            return rejectWithValue(error.message || "not found")
+        }
+    }
+)
+

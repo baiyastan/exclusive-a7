@@ -16,15 +16,16 @@ function Banner() {
         dispatch(getCategory())
     }, [])
 
-    console.log(list);
     
     return (
         <div className='banner'>
             <div className='sidebar'>
                 <ul>
-                    <li>Women's Fashion</li>
-                    <li>Men's Fashion</li>
-                    <Button variant="secondary">Primary</Button>
+                   {
+                    list.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))
+                   }
 
                 </ul>
             </div>

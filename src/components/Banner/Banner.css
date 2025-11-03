@@ -9,6 +9,11 @@
 
 .sidebar ul {
     list-style: none;
+    height: 344px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .carousel {
